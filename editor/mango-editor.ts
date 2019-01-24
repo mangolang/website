@@ -3,8 +3,10 @@
  * https://github.com/Microsoft/monaco-editor-samples/tree/master/browser-esm-parcel
  */
 
+import * as monaco from 'monaco-editor/esm/vs/editor/editor.api';
+
 // (1) Desired editor features:
-import 'node_modules/monaco-editor/esm/vs/editor/browser/controller/coreCommands';
+// import 'node_modules/monaco-editor/esm/vs/editor/browser/controller/coreCommands';
 // import 'node_modules/monaco-editor/esm/vs/editor/browser/widget/codeEditorWidget.js';
 // import 'node_modules/monaco-editor/esm/vs/editor/browser/widget/diffEditorWidget.js';
 // import 'node_modules/monaco-editor/esm/vs/editor/browser/widget/diffNavigator.js';
@@ -18,7 +20,7 @@ import 'node_modules/monaco-editor/esm/vs/editor/browser/controller/coreCommands
 // import 'node_modules/monaco-editor/esm/vs/editor/contrib/contextmenu/contextmenu.js';
 // import 'node_modules/monaco-editor/esm/vs/editor/contrib/cursorUndo/cursorUndo.js';
 // import 'node_modules/monaco-editor/esm/vs/editor/contrib/dnd/dnd.js';
-import 'node_modules/monaco-editor/esm/vs/editor/contrib/find/findController';
+// import 'node_modules/monaco-editor/esm/vs/editor/contrib/find/findController';
 // import 'node_modules/monaco-editor/esm/vs/editor/contrib/folding/folding.js';
 // import 'node_modules/monaco-editor/esm/vs/editor/contrib/format/formatActions.js';
 // import 'node_modules/monaco-editor/esm/vs/editor/contrib/goToDeclaration/goToDeclarationCommands.js';
@@ -46,7 +48,6 @@ import 'node_modules/monaco-editor/esm/vs/editor/contrib/find/findController';
 // import 'node_modules/monaco-editor/esm/vs/editor/standalone/browser/quickOpen/gotoLine.js';
 // import 'node_modules/monaco-editor/esm/vs/editor/standalone/browser/quickOpen/quickCommand.js';
 // import 'node_modules/monaco-editor/esm/vs/editor/standalone/browser/toggleHighContrast/toggleHighContrast.js';
-import * as monaco from 'monaco-editor/esm/vs/editor/editor.api';
 
 // (2) Desired languages:
 // import 'node_modules/monaco-editor/esm/vs/language/typescript/monaco.contribution';
@@ -94,40 +95,40 @@ import 'node_modules/monaco-editor/esm/vs/basic-languages/python/python.contribu
 // import 'node_modules/monaco-editor/esm/vs/basic-languages/javascript/javascript.contribution';
 // import 'node_modules/monaco-editor/esm/vs/basic-languages/typescript/typescript.contribution';
 
-
-// @ts-ignore
-self.MonacoEnvironment = {
-    getWorker: function (moduleId, label) {
-        // if (label === 'json') {
-        //     return new Worker('node_modules/monaco-editor/esm/vs/language/json/json.worker.js')
-        // }
-        // if (label === 'css') {
-        //     return new Worker('node_modules/monaco-editor/esm/vs/language/css/css.worker.js')
-        // }
-        // if (label === 'html') {
-        //     return new Worker('node_modules/monaco-editor/esm/vs/language/html/html.worker.js')
-        // }
-        // if (label === 'typescript' || label === 'javascript') {
-        //     return new Worker('node_modules/monaco-editor/esm/vs/language/typescript/ts.worker.js')
-        // }
-        return new Worker('node_modules/monaco-editor/esm/vs/editor/editor.worker.js')
-    }
-};
-
-monaco.editor.create(document.getElementById('container'), {
-    value: [
-        'from banana import *',
-        '',
-        'class Monkey:',
-        '	# Bananas the monkey can eat.',
-        '	capacity = 10',
-        '	def eat(self, N):',
-        '		\'\'\'Make the monkey eat N bananas!\'\'\'',
-        '		capacity = capacity - N*banana.size',
-        '',
-        '	def feeding_frenzy(self):',
-        '		eat(9.25)',
-        '		return "Yum yum"',
-    ].join('\n'),
-    language: 'python'
-});
+//
+// // @ts-ignore
+// self.MonacoEnvironment = {
+//     getWorker: function (moduleId, label) {
+//         // if (label === 'json') {
+//         //     return new Worker('node_modules/monaco-editor/esm/vs/language/json/json.worker.js')
+//         // }
+//         // if (label === 'css') {
+//         //     return new Worker('node_modules/monaco-editor/esm/vs/language/css/css.worker.js')
+//         // }
+//         // if (label === 'html') {
+//         //     return new Worker('node_modules/monaco-editor/esm/vs/language/html/html.worker.js')
+//         // }
+//         // if (label === 'typescript' || label === 'javascript') {
+//         //     return new Worker('node_modules/monaco-editor/esm/vs/language/typescript/ts.worker.js')
+//         // }
+//         return new Worker('node_modules/monaco-editor/esm/vs/editor/editor.worker.js')
+//     }
+// };
+//
+// monaco.editor.create(document.getElementById('container'), {
+//     value: [
+//         'from banana import *',
+//         '',
+//         'class Monkey:',
+//         '	# Bananas the monkey can eat.',
+//         '	capacity = 10',
+//         '	def eat(self, N):',
+//         '		\'\'\'Make the monkey eat N bananas!\'\'\'',
+//         '		capacity = capacity - N*banana.size',
+//         '',
+//         '	def feeding_frenzy(self):',
+//         '		eat(9.25)',
+//         '		return "Yum yum"',
+//     ].join('\n'),
+//     language: 'python'
+// });
