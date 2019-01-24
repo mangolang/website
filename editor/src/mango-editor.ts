@@ -1,4 +1,3 @@
-
 /**
  * https://github.com/Microsoft/monaco-editor-samples/tree/master/browser-esm-parcel
  * https://github.com/Microsoft/monaco-editor/blob/bad3c34056624dca34ac8be5028ae3454172125c/website/playground/playground.js#L108
@@ -98,85 +97,89 @@ import 'monaco-editor/esm/vs/basic-languages/python/python.contribution.js';
 // import 'monaco-editor/esm/vs/basic-languages/typescript/typescript.contribution';
 
 
-
 // @ts-ignore
 self.MonacoEnvironment = {
-	getWorker: function (moduleId, label) {
-		if (label === 'json') {
-			return new Worker('../node_modules/monaco-editor/esm/vs/language/json/json.worker.js')
-		}
-		if (label === 'css') {
-			return new Worker('../node_modules/monaco-editor/esm/vs/language/css/css.worker.js')
-		}
-		if (label === 'html') {
-			return new Worker('../node_modules/monaco-editor/esm/vs/language/html/html.worker.js')
-		}
-		if (label === 'typescript' || label === 'javascript') {
-			return new Worker('../node_modules/monaco-editor/esm/vs/language/typescript/ts.worker.js')
-		}
-		return new Worker('../node_modules/monaco-editor/esm/vs/editor/editor.worker.js')
-	}
+    getWorker: function (moduleId, label) {
+        if (label === 'json') {
+            return new Worker('../node_modules/monaco-editor/esm/vs/language/json/json.worker.js')
+        }
+        if (label === 'css') {
+            return new Worker('../node_modules/monaco-editor/esm/vs/language/css/css.worker.js')
+        }
+        if (label === 'html') {
+            return new Worker('../node_modules/monaco-editor/esm/vs/language/html/html.worker.js')
+        }
+        if (label === 'typescript' || label === 'javascript') {
+            return new Worker('../node_modules/monaco-editor/esm/vs/language/typescript/ts.worker.js')
+        }
+        return new Worker('../node_modules/monaco-editor/esm/vs/editor/editor.worker.js')
+    }
 };
 
 (() => {
-	var editorElem = document.getElementById('mango-editor');
-	var outputElem = document.getElementById('mango-output');
-	var darkButton = document.getElementById('dark-theme-button');
-	var lightButton = document.getElementById('light-theme-button');
-	var darkThemeStyle = <HTMLLinkElement>document.getElementById('mango-theme-style-dark');
-	var lightThemeStyle = <HTMLLinkElement>document.getElementById('mango-theme-style-light');
+    var editorElem = document.getElementById('mango-editor');
+    var outputElem = document.getElementById('mango-output');
+    var darkButton = document.getElementById('dark-theme-button');
+    var lightButton = document.getElementById('light-theme-button');
+    var darkThemeStyle = <HTMLLinkElement>document.getElementById('mango-theme-style-dark');
+    var lightThemeStyle = <HTMLLinkElement>document.getElementById('mango-theme-style-light');
 
-	monaco.editor.create(editorElem, {
-		value: [
-			'from banana import *',
-			'',
-			'class Monkey:',
-			'	# Bananas the monkey can eat.',
-			'	capacity = 10',
-			'	def eat(self, N):',
-			'		\'\'\'Make the monkey eat N bananas!\'\'\'',
-			'		capacity = capacity - N*banana.size',
-			'',
-			'	def feeding_frenzy(self):',
-			'		eat(9.25)',
-			'		return "Yum yum"',
-			'',
-		].join('\n'),
-		theme: 'vs-dark',
-		language: 'python'
-	});
+    monaco.editor.create(editorElem, {
+        value: [
+            'from banana import *',
+            '',
+            'class Monkey:',
+            '	# Bananas the monkey can eat.',
+            '	capacity = 10',
+            '	def eat(self, N):',
+            '		\'\'\'Make the monkey eat N bananas!\'\'\'',
+            '		capacity = capacity - N*banana.size',
+            '',
+            '	def feeding_frenzy(self):',
+            '		eat(9.25)',
+            '		return "Yum yum"',
+            '',
+        ].join('\n'),
+        theme: 'vs-dark',
+        language: 'python'
+    });
 
-	monaco.editor.create(outputElem, {
-		value: [
-			'(no output yet)',
-			'',
-		].join('\n'),
-		theme: 'vs-light',
-		readOnly: true,
-		language: null
-	});
+    monaco.editor.create(outputElem, {
+        value: [
+            '(no output yet)',
+            '',
+        ].join('\n'),
+        theme: 'vs-light',
+        readOnly: true,
+        language: null
+    });
 
-	function toDarkTheme() {
-		console.log('switch to dark theme');
-		darkButton.style.display = "none";
-		lightButton.style.display = "block";
-		darkThemeStyle.removeAttribute("disabled");
-		lightThemeStyle.setAttribute("disabled", "disabled");
-		monaco.editor.setTheme('vs-dark');
-		return false;
-	}
+    function toDarkTheme() {
+        console.log('switch to dark theme');
+        darkButton.style.display = "none";
+        lightButton.style.display = "block";
+        document.body.classList.add("dark-theme");
+        document.body.classList.remove("light-theme");
+        monaco.editor.setTheme('vs-dark');
+    }
 
-	function toLightTheme() {
-		console.log('switch to light theme');
-		darkButton.style.display = "block";
-		lightButton.style.display = "none";
-		darkThemeStyle.setAttribute("disabled", "disabled");
-		lightThemeStyle.removeAttribute("disabled");
-		monaco.editor.setTheme('vs-light');
-		return false;
-	}
-	darkButton.firstChild.addEventListener('click', (event) => toDarkTheme());
-	lightButton.firstChild.addEventListener('click', (event) => toLightTheme());
-	//TODO @mark: store default theme
-	toLightTheme();
+    function toLightTheme() {
+        console.log('switch to light theme');
+        darkButton.style.display = "block";
+        lightButton.style.display = "none";
+        document.body.classList.add("light-theme");
+        document.body.classList.remove("dark-theme");
+        monaco.editor.setTheme('vs-light');
+    }
+
+    darkButton.firstChild.addEventListener('click', (event) => {
+        event.preventDefault();
+        toDarkTheme();
+    });
+    lightButton.firstChild.addEventListener('click', (event) => {
+        event.preventDefault();
+        toLightTheme();
+    });
+    //TODO @mark: store default theme
+    toLightTheme();
 })();
