@@ -24,7 +24,9 @@ nav#mango-demo-menu ul {
 
 nav#mango-demo-menu li {
   float: left;
+  text-align: center;
   margin-right: 1em;
   padding: 0.5em;
+  border: 1px solid gray;
   min-width: 5em;
 }

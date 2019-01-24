@@ -123,6 +123,8 @@ self.MonacoEnvironment = {
 	var outputElem = document.getElementById('mango-output');
 	var darkButton = document.getElementById('dark-theme-button');
 	var lightButton = document.getElementById('light-theme-button');
+	var darkThemeStyle = <HTMLLinkElement>document.getElementById('mango-theme-style-dark');
+	var lightThemeStyle = <HTMLLinkElement>document.getElementById('mango-theme-style-light');
 
 	monaco.editor.create(editorElem, {
 		value: [
@@ -149,7 +151,7 @@ self.MonacoEnvironment = {
 			'(no output yet)',
 			'',
 		].join('\n'),
-		theme: 'vs-dark',
+		theme: 'vs-light',
 		readOnly: true,
 		language: null
 	});
@@ -158,19 +160,23 @@ self.MonacoEnvironment = {
 		console.log('switch to dark theme');
 		darkButton.style.display = "none";
 		lightButton.style.display = "block";
+		darkThemeStyle.removeAttribute("disabled");
+		lightThemeStyle.setAttribute("disabled", "disabled");
 		monaco.editor.setTheme('vs-dark');
 		return false;
 	}
+
 	function toLightTheme() {
 		console.log('switch to light theme');
-		//TODO @mark: button hiding could be done in theme
 		darkButton.style.display = "block";
 		lightButton.style.display = "none";
+		darkThemeStyle.setAttribute("disabled", "disabled");
+		lightThemeStyle.removeAttribute("disabled");
 		monaco.editor.setTheme('vs-light');
 		return false;
 	}
-	darkButton.addEventListener('click', (event) => toDarkTheme());
-	lightButton.addEventListener('click', (event) => toLightTheme());
+	darkButton.firstChild.addEventListener('click', (event) => toDarkTheme());
+	lightButton.firstChild.addEventListener('click', (event) => toLightTheme());
 	//TODO @mark: store default theme
 	toLightTheme();
 })();
