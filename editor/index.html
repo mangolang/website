@@ -2,7 +2,9 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>Benjamin WebSocket test</title>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta http-equiv="Content-Type" content="text/html;charset=utf-8" >
+	<title>Mango editor</title>
 	<link rel="stylesheet" type="text/css" href="./node_modules/reset-css/reset.css">
 	<link rel="stylesheet" type="text/css" href="mango-editor.scss">
 </head>
@@ -11,9 +13,15 @@
 <div id="page-container">
 	<main>
 		<h1>Mango editor</h1>
+		
+		<div id="mango-editor"></div>
 	</main>
 </div>
 
+<script>var require = { paths: { 'vs': '../node_modules/monaco-editor/min/vs' } };</script>
+<script src="node_modules/monaco-editor/min/vs/loader.js"></script>
+<script src="node_modules/monaco-editor/min/vs/editor/editor.main.nls.js"></script>
+<script src="node_modules/monaco-editor/min/vs/editor/editor.main.js"></script>
 <script src="mango-editor.ts"></script>
 </body>
 </html>
