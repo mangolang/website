@@ -1,7 +1,10 @@
 
 /**
  * https://github.com/Microsoft/monaco-editor-samples/tree/master/browser-esm-parcel
+ * https://github.com/Microsoft/monaco-editor/blob/bad3c34056624dca34ac8be5028ae3454172125c/website/playground/playground.js#L108
  */
+
+//TODO @mark: tabs: https://github.com/Microsoft/monaco-editor/blob/bad3c34056624dca34ac8be5028ae3454172125c/website/playground/playground.js#L108
 
 // (1) Desired editor features:
 import 'monaco-editor/esm/vs/editor/browser/controller/coreCommands.js';
@@ -129,6 +132,7 @@ monaco.editor.create(document.getElementById('mango-editor'), {
 		'	def feeding_frenzy(self):',
 		'		eat(9.25)',
 		'		return "Yum yum"',
+		'',
 	].join('\n'),
 	language: 'python'
 });
