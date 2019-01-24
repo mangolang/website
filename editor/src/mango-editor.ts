@@ -118,21 +118,59 @@ self.MonacoEnvironment = {
 	}
 };
 
-monaco.editor.create(document.getElementById('mango-editor'), {
-	value: [
-		'from banana import *',
-		'',
-		'class Monkey:',
-		'	# Bananas the monkey can eat.',
-		'	capacity = 10',
-		'	def eat(self, N):',
-		'		\'\'\'Make the monkey eat N bananas!\'\'\'',
-		'		capacity = capacity - N*banana.size',
-		'',
-		'	def feeding_frenzy(self):',
-		'		eat(9.25)',
-		'		return "Yum yum"',
-		'',
-	].join('\n'),
-	language: 'python'
-});
+(() => {
+	var editorElem = document.getElementById('mango-editor');
+	var outputElem = document.getElementById('mango-output');
+	var darkButton = document.getElementById('dark-theme-button');
+	var lightButton = document.getElementById('light-theme-button');
+
+	monaco.editor.create(editorElem, {
+		value: [
+			'from banana import *',
+			'',
+			'class Monkey:',
+			'	# Bananas the monkey can eat.',
+			'	capacity = 10',
+			'	def eat(self, N):',
+			'		\'\'\'Make the monkey eat N bananas!\'\'\'',
+			'		capacity = capacity - N*banana.size',
+			'',
+			'	def feeding_frenzy(self):',
+			'		eat(9.25)',
+			'		return "Yum yum"',
+			'',
+		].join('\n'),
+		theme: 'vs-dark',
+		language: 'python'
+	});
+
+	monaco.editor.create(outputElem, {
+		value: [
+			'(no output yet)',
+			'',
+		].join('\n'),
+		theme: 'vs-dark',
+		readOnly: true,
+		language: null
+	});
+
+	function toDarkTheme() {
+		console.log('switch to dark theme');
+		darkButton.style.display = "none";
+		lightButton.style.display = "block";
+		monaco.editor.setTheme('vs-dark');
+		return false;
+	}
+	function toLightTheme() {
+		console.log('switch to light theme');
+		//TODO @mark: button hiding could be done in theme
+		darkButton.style.display = "block";
+		lightButton.style.display = "none";
+		monaco.editor.setTheme('vs-light');
+		return false;
+	}
+	darkButton.addEventListener('click', (event) => toDarkTheme());
+	lightButton.addEventListener('click', (event) => toLightTheme());
+	//TODO @mark: store default theme
+	toLightTheme();
+})();
