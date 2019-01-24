@@ -1,0 +1,14 @@
+{
+  "name": "mango-editor",
+  "version": "0.1.0",
+  "description": "Browser editor for the Mango language",
+  "repository": "https://github.com:mangolang/website",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Mark V",
+  "dependencies": {
+    "reset-css": "^4.0.1"
+  }
+}
