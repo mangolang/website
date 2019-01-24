@@ -10,12 +10,11 @@
   "author": "Mark V",
   "dependencies": {
     "monaco-editor": "^0.15.6",
-    "parcel": "^1.11.0",
-    "requirejs": "^2.3.6",
     "reset-css": "^4.0.1"
   },
   "devDependencies": {
     "@types/node": "^10.12.18",
+    "parcel-bundler": "^1.11.0",
     "sass": "^1.16.1",
     "typescript": "^3.2.4"
   }

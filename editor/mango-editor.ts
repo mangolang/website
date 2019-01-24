@@ -4,7 +4,7 @@
  */
 
 // (1) Desired editor features:
-import 'node_modules/monaco-editor/esm/vs/editor/browser/controller/coreCommands.js';
+import 'node_modules/monaco-editor/esm/vs/editor/browser/controller/coreCommands';
 // import 'node_modules/monaco-editor/esm/vs/editor/browser/widget/codeEditorWidget.js';
 // import 'node_modules/monaco-editor/esm/vs/editor/browser/widget/diffEditorWidget.js';
 // import 'node_modules/monaco-editor/esm/vs/editor/browser/widget/diffNavigator.js';
@@ -18,7 +18,7 @@ import 'node_modules/monaco-editor/esm/vs/editor/browser/controller/coreCommands
 // import 'node_modules/monaco-editor/esm/vs/editor/contrib/contextmenu/contextmenu.js';
 // import 'node_modules/monaco-editor/esm/vs/editor/contrib/cursorUndo/cursorUndo.js';
 // import 'node_modules/monaco-editor/esm/vs/editor/contrib/dnd/dnd.js';
-import 'node_modules/monaco-editor/esm/vs/editor/contrib/find/findController.js';
+import 'node_modules/monaco-editor/esm/vs/editor/contrib/find/findController';
 // import 'node_modules/monaco-editor/esm/vs/editor/contrib/folding/folding.js';
 // import 'node_modules/monaco-editor/esm/vs/editor/contrib/format/formatActions.js';
 // import 'node_modules/monaco-editor/esm/vs/editor/contrib/goToDeclaration/goToDeclarationCommands.js';
@@ -46,7 +46,7 @@ import 'node_modules/monaco-editor/esm/vs/editor/contrib/find/findController.js'
 // import 'node_modules/monaco-editor/esm/vs/editor/standalone/browser/quickOpen/gotoLine.js';
 // import 'node_modules/monaco-editor/esm/vs/editor/standalone/browser/quickOpen/quickCommand.js';
 // import 'node_modules/monaco-editor/esm/vs/editor/standalone/browser/toggleHighContrast/toggleHighContrast.js';
-import * as monaco from 'monaco-editor/esm/vs/editor/editor.api.js';
+import * as monaco from 'monaco-editor/esm/vs/editor/editor.api';
 
 // (2) Desired languages:
 // import 'node_modules/monaco-editor/esm/vs/language/typescript/monaco.contribution';
@@ -77,7 +77,7 @@ import * as monaco from 'monaco-editor/esm/vs/editor/editor.api.js';
 // import 'node_modules/monaco-editor/esm/vs/basic-languages/postiats/postiats.contribution.js';
 // import 'node_modules/monaco-editor/esm/vs/basic-languages/powershell/powershell.contribution.js';
 // import 'node_modules/monaco-editor/esm/vs/basic-languages/pug/pug.contribution.js';
-import 'node_modules/monaco-editor/esm/vs/basic-languages/python/python.contribution.js';
+import 'node_modules/monaco-editor/esm/vs/basic-languages/python/python.contribution';
 // import 'node_modules/monaco-editor/esm/vs/basic-languages/r/r.contribution.js';
 // import 'node_modules/monaco-editor/esm/vs/basic-languages/razor/razor.contribution.js';
 // import 'node_modules/monaco-editor/esm/vs/basic-languages/redis/redis.contribution.js';
@@ -95,21 +95,21 @@ import 'node_modules/monaco-editor/esm/vs/basic-languages/python/python.contribu
 // import 'node_modules/monaco-editor/esm/vs/basic-languages/typescript/typescript.contribution';
 
 
-
+// @ts-ignore
 self.MonacoEnvironment = {
     getWorker: function (moduleId, label) {
-        if (label === 'json') {
-            return new Worker('node_modules/monaco-editor/esm/vs/language/json/json.worker.js')
-        }
-        if (label === 'css') {
-            return new Worker('node_modules/monaco-editor/esm/vs/language/css/css.worker.js')
-        }
-        if (label === 'html') {
-            return new Worker('node_modules/monaco-editor/esm/vs/language/html/html.worker.js')
-        }
-        if (label === 'typescript' || label === 'javascript') {
-            return new Worker('node_modules/monaco-editor/esm/vs/language/typescript/ts.worker.js')
-        }
+        // if (label === 'json') {
+        //     return new Worker('node_modules/monaco-editor/esm/vs/language/json/json.worker.js')
+        // }
+        // if (label === 'css') {
+        //     return new Worker('node_modules/monaco-editor/esm/vs/language/css/css.worker.js')
+        // }
+        // if (label === 'html') {
+        //     return new Worker('node_modules/monaco-editor/esm/vs/language/html/html.worker.js')
+        // }
+        // if (label === 'typescript' || label === 'javascript') {
+        //     return new Worker('node_modules/monaco-editor/esm/vs/language/typescript/ts.worker.js')
+        // }
         return new Worker('node_modules/monaco-editor/esm/vs/editor/editor.worker.js')
     }
 };
