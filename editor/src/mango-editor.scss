@@ -1,6 +1,6 @@
 
 div#page-container {
-  max-width: 920px;
+  //max-width: 920px;
   margin: 0 auto;
 }
 
@@ -28,13 +28,45 @@ nav#mango-demo-menu ul {
 
 nav#mango-demo-menu li {
   float: left;
-  //text-align: center;
   margin-right: 1em;
-  //padding: 0.5em;
   border: 1px solid gray;
   min-width: 5em;
 }
 
+/**
+ * Wide and narrow display
+ */
+
+body {
+  background-color: yellow;
+
+  div.editor-container {
+    width: 49%;
+  }
+
+  div#mango-editor {
+    float: left;
+  }
+
+  div#mango-output {
+    float: right;
+  }
+}
+
+//TODO @mark: update max-width cutoff
+@media only screen and (max-width: 600px) {
+  body {
+    background-color: lightblue;
+  }
+
+  div#page-container {
+    padding-left: 2em;
+  }
+}
+
+/**
+ * Themes
+ */
 body {
   &.light-theme {
     background-color: #EEE;
