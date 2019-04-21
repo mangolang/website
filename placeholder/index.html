@@ -8,67 +8,88 @@
 	
 	<link rel="icon" href="icon.png">
 	
-	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous" />
-	<link href="style.css" rel="stylesheet" />
-	
-	<script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-	<script src="script.js"></script>
+	<link href="style.css" rel="stylesheet"/>
 </head>
 <body>
 <div id="page">
 	<div class="container">
-		<main id="content" class="jumbotron">
-			<div class="row">
-				
-				<div id="icon" class="col-xs-12 col-md-3">
-					<img src="icon.png" />
-				</div>
-				
-				<div class="col-xs-12 col-md-9">
-					<h1>
-						Mango
-					</h1>
-					
-					<section>
-						<p>Mango is a programming language that focuses on maintainability. It will compile to WebAssembly for scalable web development.</p>
-						<ul>
-							<li>Encapsulation</li>
-							<li>Fail fast</li>
-							<li>Explicit</li>
-							<li>Enforce invariants</li>
-							<li>Conservative defaults</li>
-							<li>Immutability</li>
-							<li>Memory safety</li>
-							<li>No aliasing (ownership)</li>
-							<li>Prevent surprises</li>
-							<li>Safe macros</li>
-							<li>Unit test integration</li>
-							<li>Functional vs data types</li>
-							<li>AST level macros</li>
-						</ul>
-						<p>This may come at the cost of:</p>
-						<ul>
-							<li>Speed of development</li>
-							<li>Learning curve</li>
-						</ul>
-						<p><em>It is currently in development.</em></p>
-					</section>
-					
-					<div id="actions">
-						<div class="btn-group btn-group-justified" role="group">
-							<a href="https://github.com/mangolang/compiler" class="btn btn-default btn-lg">
-								<span class="glyphicon glyphicon-arrow-right"></span>
-								Check it out on Github!
-							</a>
-						</div>
-					</div>
-				</div>
-			
-			</div>
+		<nav id="top_menu">
+			<ol>
+				<li>
+					<a href="/">
+						🏠 Mango
+					</a>
+				</li>
+				<li>
+					<a href="/docs">
+						📚 Docs
+					</a>
+				</li>
+				<li>
+					<a href="/ide">
+						⌨ Try
+					</a>
+				</li>
+				<li>
+					<a href="https://github.com/mangolang/compiler">
+						🐱 Source ↗
+					</a>
+				</li>
+			</ol>
+		</nav>
+		<main id="content">
+			<!--			<div class="row">-->
+			<!--				-->
+			<!--				<div id="icon" class="col-xs-12 col-md-3">-->
+			<!--					<img src="icon.png" />-->
+			<!--				</div>-->
+			<!--				-->
+			<!--				<div class="col-xs-12 col-md-9">-->
+			<!--					<h1>-->
+			<!--						Mango-->
+			<!--					</h1>-->
+			<!--					-->
+			<!--					<section>-->
+			<!--						<p>Mango is a programming language that focuses on maintainability. It will compile to WebAssembly for scalable web development.</p>-->
+			<!--						<ul>-->
+			<!--							<li>Encapsulation</li>-->
+			<!--							<li>Fail fast</li>-->
+			<!--							<li>Explicit</li>-->
+			<!--							<li>Enforce invariants</li>-->
+			<!--							<li>Conservative defaults</li>-->
+			<!--							<li>Immutability</li>-->
+			<!--							<li>Memory safety</li>-->
+			<!--							<li>No aliasing (ownership)</li>-->
+			<!--							<li>Prevent surprises</li>-->
+			<!--							<li>Safe macros</li>-->
+			<!--							<li>Unit test integration</li>-->
+			<!--							<li>Functional vs data types</li>-->
+			<!--							<li>AST level macros</li>-->
+			<!--						</ul>-->
+			<!--						<p>This may come at the cost of:</p>-->
+			<!--						<ul>-->
+			<!--							<li>Speed of development</li>-->
+			<!--							<li>Learning curve</li>-->
+			<!--						</ul>-->
+			<!--						<p><em>It is currently in development.</em></p>-->
+			<!--					</section>-->
+			<!--					-->
+			<!--					<div id="actions">-->
+			<!--						<div class="btn-group btn-group-justified" role="group">-->
+			<!--							<a href="https://github.com/mangolang/compiler" class="btn btn-default btn-lg">-->
+			<!--								<span class="glyphicon glyphicon-arrow-right"></span>-->
+			<!--								Check it out on Github!-->
+			<!--							</a>-->
+			<!--						</div>-->
+			<!--					</div>-->
+			<!--				</div>-->
+			<!--			-->
+			<!--			</div>-->
 		</main>
 	</div>
 </div>
+
+<script src="script.js"></script>
 </body>
 </html>
 
