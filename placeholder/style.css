@@ -58,6 +58,8 @@ table {
 
 body {
 	font-family: 'Ubuntu', sans-serif;
+	background-color: #EEE;
+	/*background-image: url("mango_logo.png");*/
 }
 
 code {
@@ -78,6 +80,7 @@ code {
 	height: 9rem;
 	display: flex;
 	flex-direction: row;
+	background-color: white;
 }
 
 #top_header > img {
@@ -111,7 +114,7 @@ code {
 
 #top_menu {
 	font-size: 120%;
-	background-color: #d3d3d3;
+	background-color: #ffe39f;
 	border-top: 0.3rem solid orange;
 	border-radius: 0 0 1rem 1rem;
 }
@@ -135,31 +138,33 @@ code {
 	font-size: 120%;
 	color: inherit;
 	text-decoration: none;
-	padding: 0.7rem 2rem;
+	padding: 0.9rem 1.5rem;
+	border-radius: 0 0 1rem 1rem;
 }
 
 #top_menu a:hover {
 	background-color: #c0c0c0;
 }
 
-/*#top_menu {*/
-/*	display: flex;*/
-/*}*/
-
 /*
  * Content
  */
 
 main {
-	margin-top: 1rem;
-	min-height: 40rem;
+	margin-top: 2rem;
+	border-top: 0.3rem solid orange;
+	background-color: white;
+	min-height: 70vh;
+	border-radius: 0 0 1rem 1rem;
 }
 
 /*
  * Footer
  */
 #bottom_footer {
+	text-align: right;
 	color: gray;
+	padding-right: 0.8em;
 }
 
 
