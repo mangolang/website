@@ -181,6 +181,10 @@ ul {
 	list-style: square inside;
 }
 
+a {
+	color: orange;
+}
+
 /*
  * Footer
  */
