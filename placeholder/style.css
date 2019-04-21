@@ -52,6 +52,50 @@ table {
  * Actual page style
  */
 
+body {
+	font-family: 'Ubuntu', sans-serif;
+}
+
+code {
+	font-family: 'Ubuntu Mono', monospace;
+}
+
+#page {
+	min-width: 800px;
+	max-width: 1200px;
+	margin: 0 auto;
+}
+
+#top_header {
+	height: 9em;
+	display: flex;
+	flex-direction: row;
+}
+
+#top_header > img {
+	max-width: 8em;
+	max-height: 8em;
+	margin: 0.5em;
+}
+
+#top_header_text {
+	max-height: 8em;
+	margin: 0.5em;
+}
+
+#top_header_text h1 {
+	font-size: 400%;
+}
+
+#top_header_text sub {
+	font-size: 50%;
+}
+
+#top_header_text p {
+	margin-top: 0.5em;
+	font-size: larger;
+}
+
 #top_menu {
 	background-color: red;
 }
@@ -59,3 +103,13 @@ table {
 #top_menu ol {
 	list-style-type: none;
 }
+
+
+
+
+
+
+
+
+
+
