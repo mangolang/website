@@ -52,6 +52,10 @@ table {
  * Page-wide styles
  */
 
+* {
+	box-sizing: border-box;
+}
+
 body {
 	font-family: 'Ubuntu', sans-serif;
 }
@@ -71,20 +75,20 @@ code {
  */
 
 #top_header {
-	height: 9em;
+	height: 9rem;
 	display: flex;
 	flex-direction: row;
 }
 
 #top_header > img {
-	max-width: 8em;
-	max-height: 8em;
-	margin: 0.5em;
+	max-width: 8rem;
+	max-height: 8rem;
+	margin: 0.5rem;
 }
 
 #top_header_text {
-	max-height: 8em;
-	margin: 0.5em;
+	max-height: 8rem;
+	margin: 0.5rem;
 	max-width: 600px;
 }
 
@@ -97,8 +101,8 @@ code {
 }
 
 #top_header_text p {
-	margin-top: 0.5em;
-	font-size: larger;
+	margin-top: 0.5rem;
+	font-size: 130%;
 }
 
 /*
@@ -106,24 +110,36 @@ code {
  */
 
 #top_menu {
-	font-size: larger;
-	background-color: gray;
-	border-top: 0.3em solid orange;
-	border-radius: 0 0 1em 1em;
+	font-size: 120%;
+	background-color: #d3d3d3;
+	border-top: 0.3rem solid orange;
+	border-radius: 0 0 1rem 1rem;
 }
 
 #top_menu ol {
-	list-style-type: none;
+	list-style: none;
 	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+}
+
+#top_menu li {
+	flex-grow: 1;
+	flex-basis: 0;
+	align-items: flex-start;
 }
 
 #top_menu a {
+	display: flex;
+	justify-content: center;
+	font-size: 120%;
 	color: inherit;
 	text-decoration: none;
+	padding: 0.7rem 2rem;
 }
 
 #top_menu a:hover {
-	text-decoration: underline;
+	background-color: #c0c0c0;
 }
 
 /*#top_menu {*/
@@ -135,6 +151,15 @@ code {
  */
 
 main {
-	margin-top: 1em;
+	margin-top: 1rem;
+	min-height: 40rem;
 }
+
+/*
+ * Footer
+ */
+#bottom_footer {
+	color: gray;
+}
+
 
