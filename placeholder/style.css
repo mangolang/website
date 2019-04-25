@@ -20,8 +20,8 @@ time, mark, audio, video {
 	margin: 0;
 	padding: 0;
 	border: 0;
-	font-size: 100%;
-	font: inherit;
+	font-size: 16px;
+	font-family: 'Ubuntu', sans-serif;
 	vertical-align: baseline;
 }
 /* HTML5 display-role reset for older browsers */
@@ -52,14 +52,20 @@ table {
  * Page-wide styles
  */
 
+@media (max-width: 800px) {
+	main * {
+		font-size: 20px;
+	}
+}
+
 * {
 	box-sizing: border-box;
 }
 
 body {
-	font-family: 'Ubuntu', sans-serif;
 	background-color: #EEE;
 	/*background-image: url("mango_logo.png");*/
+	line-height: 140%;
 }
 
 code {
@@ -67,8 +73,8 @@ code {
 }
 
 #page {
-	min-width: 800px;
-	max-width: 1000px;
+	min-width: 600px;
+	max-width: 800px;
 	margin: 0 auto;
 }
 
@@ -77,7 +83,6 @@ code {
  */
 
 #top_header {
-	height: 9rem;
 	display: flex;
 	flex-direction: row;
 	background-color: white;
@@ -96,7 +101,7 @@ code {
 }
 
 #top_header_text h1 {
-	margin: 0;
+	margin: 1rem 0 0 0;
 	font-size: 400%;
 }
 
@@ -105,7 +110,7 @@ code {
 }
 
 #top_header_text p {
-	margin-top: 0.5rem;
+	margin-top: 1.5rem;
 	font-size: 130%;
 }
 
@@ -157,8 +162,6 @@ main {
 	background-color: white;
 	min-height: 70vh;
 	border-radius: 0 0 1rem 1rem;
-	font-size: 16px;
-	line-height: 24px;
 	padding: 0.5rem 1.5rem;
 }
 
