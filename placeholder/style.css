@@ -52,12 +52,6 @@ table {
  * Page-wide styles
  */
 
-@media (max-width: 800px) {
-	main * {
-		font-size: 20px;
-	}
-}
-
 * {
 	box-sizing: border-box;
 }
@@ -73,7 +67,6 @@ code {
 }
 
 #page {
-	min-width: 600px;
 	max-width: 800px;
 	margin: 0 auto;
 }
@@ -95,7 +88,6 @@ code {
 }
 
 #top_header_text {
-	max-height: 8rem;
 	margin: 0.5rem;
 	max-width: 600px;
 }
@@ -146,6 +138,7 @@ code {
 	text-decoration: none;
 	padding: 0.9rem 0;
 	border-radius: 0 0 1rem 1rem;
+	white-space: nowrap;
 }
 
 #top_menu a:hover, #top_menu a:active {
