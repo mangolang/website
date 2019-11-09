@@ -81,10 +81,13 @@ code {
 	background-color: white;
 }
 
-#top_header > img {
-	width: 8rem;
-	height: 8rem;
+#top_header_logo_container {
+	background-image: url("mango_logo.png");
+	background-repeat: no-repeat;
+	background-size: contain;
 	margin: 0.5rem;
+	min-width: 8rem;
+	min-height: 8rem;
 }
 
 #top_header_text {
